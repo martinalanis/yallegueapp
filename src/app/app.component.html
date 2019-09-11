@@ -1,3 +1,25 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <ion-split-pane when="md" contentId="principal">
+    
+    <ion-menu side="start" menuId="defaultMenu" contentId="principal">
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Ya Llegue</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle autoHide="false" *ngFor="let link of menuLinks">
+            <ion-item [routerLink]="link.redirectTo">
+              <ion-label>{{ link.text }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle> 
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+  
+    <ion-router-outlet id="principal"></ion-router-outlet>
+    
+  </ion-split-pane>
 </ion-app>
