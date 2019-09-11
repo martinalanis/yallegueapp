@@ -1,0 +1,23 @@
+<ion-content>
+  <ion-grid justify-content-center class="ion-page">
+    <ion-row justify-content-center>
+      <ion-col size="6">
+        <img src="../../assets/logo.png" alt="">
+        <!-- <ion-img [src]="../../assets/logo.png"></ion-img> -->
+      </ion-col>
+    </ion-row>
+    <ion-row justify-content-center>
+      <ion-col size="10">
+        <ion-item>
+          <ion-label>Selecciona tu instituto</ion-label>
+          <ion-select interface="action-sheet" cancel-text="Salir" [(ngModel)]="instituto" (ngModelChange)="goHome()">
+            <ion-select-option value="0">ITM</ion-select-option>
+            <ion-select-option value="1">UTM</ion-select-option>
+            <ion-select-option value="2">UMSNH</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
