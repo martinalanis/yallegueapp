@@ -1,5 +1,7 @@
 {
   "name": "yallegueapp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

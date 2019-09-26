@@ -25,6 +25,45 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+ion-button {
+  font-weight: 600;
+  height: 40px;
+}
+
+.ion-color-purple {
+  --ion-color-base: var(--ion-color-purple);
+  --ion-color-base-rgb: var(--ion-color-purple-rgb);
+  --ion-color-contrast: var(--ion-color-purple-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-purple-contrast-rgb);
+  --ion-color-shade: var(--ion-color-purple-shade);
+  --ion-color-tint: var(--ion-color-purple-tint);
+}
+
+.button-round {
+  --border-radius: 15px;
+}
+
+.title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.font-primary {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 4px;
+}
+
+.font1 {
+  font-size: 1.1rem;
+}
+
+.font-600 {
+  font-weight: 600;
+}
+
 .action-sheet-group {
   background: var(--ion-color-tertiary) !important;
 }
@@ -39,4 +78,12 @@
 
 .action-sheet-selected {
   color: var(--light-blue) !important;
+}
+
+.text-teal {
+  color: var(--teal);
+}
+
+.border-radius-15 {
+  border-radius: 15px;
 }

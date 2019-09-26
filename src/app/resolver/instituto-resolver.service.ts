@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
-import { DataService } from '../services/data.service';
+import { InstitutoService } from '../services/instituto.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class InstituteResolverService implements Resolve<any> {
+export class InstitutoResolverService implements Resolve<any> {
 
-  constructor( private dataService: DataService ) { }
+  constructor( private institutoService: InstitutoService ) { }
 
   resolve(route: ActivatedRouteSnapshot) {
     const institutoId = route.paramMap.get('instituto');
-    return this.dataService.getVendedor(institutoId);
+    return this.institutoService.getInstituto(institutoId);
     // return institutoId;
   }
 }

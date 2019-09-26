@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { InstituteResolverService } from './resolver/institute-resolver.service';
+import { InstitutoResolverService } from './resolver/instituto-resolver.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
@@ -10,10 +10,11 @@ const routes: Routes = [
   {
     path: 'home/:instituto',
     resolve: {
-      vendedores: InstituteResolverService
+      vendedores: InstitutoResolverService
     },
     loadChildren: './pages/home/home.module#HomePageModule'
   },
+  { path: 'registro', loadChildren: './pages/registro/registro.module#RegistroPageModule' },
 ];
 
 @NgModule({

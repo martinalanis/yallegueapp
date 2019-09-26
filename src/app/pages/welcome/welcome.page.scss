@@ -1,7 +1,12 @@
-ion-content {
+.ion-page {
+  --ion-item-background: transparent;
   --background: none;
   background-image: url('../../../assets/background.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+ion-list {
+  background: rgba(255,255,255,0.7);
 }
