@@ -1,19 +1,44 @@
-<ion-header>
-  <ion-toolbar color="primary">
+<ion-header translucent>
+  <ion-toolbar color="tertiary">
 
     <ion-buttons slot="start">
       <ion-menu-button menu="defaultMenu"></ion-menu-button>
     </ion-buttons>
 
     <ion-title>
-      Ionic Blank
+      Instituto Tecnológico de Morelia
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    {{ vendedores }}
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content fullscreen>
+  <ion-grid fixed class="ion-padding-vertical">
+    <ion-row>
+      <ion-col size="12">
+        <ion-card>
+          <div class="card-image-container">
+            <ion-img src="../../../assets/placeholders/comida.jpg"></ion-img>
+          </div>
+          <!-- <ion-card-header>
+            
+          </ion-card-header> -->
+          <ion-card-content (click)="detallesVendedor()">
+            <ion-card-title class="ion-text-uppercase"><b>El Merendero Venezolano</b></ion-card-title>
+            <ion-card-subtitle>
+              <ion-chip color="medium" outline="true" class="no-margin-lr">
+                <ion-label (click)="chip($event)">Comida</ion-label>
+              </ion-chip>
+            </ion-card-subtitle>
+            <div class="ion-margin-vertical">
+              {{ 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vitae alias hic eligendi quo sit amet consectetur' | truncateText : 80 }}
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12">
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>

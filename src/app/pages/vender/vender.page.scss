@@ -1,6 +1,10 @@
+ion-content {  
+  --offset-top: 0 !important;
+}
+
 .ion-page {
   --background: none;
-  background-image: var(--background-image);
+  background-image: url('../../../assets/background.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

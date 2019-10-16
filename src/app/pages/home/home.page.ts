@@ -5,7 +5,7 @@ import { MenuController } from '@ionic/angular';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  styleUrls: ['home.page.scss']
 })
 export class HomePage implements OnInit {
 
@@ -21,6 +21,15 @@ export class HomePage implements OnInit {
 
   ionViewDidEnter() {
     this.menuCtrl.enable(true);
+  }
+
+  detallesVendedor() {
+    console.log('Click on card');
+  }
+
+  chip(event) {
+    event.stopPropagation();
+    console.log('Click on chip');
   }
 
 }

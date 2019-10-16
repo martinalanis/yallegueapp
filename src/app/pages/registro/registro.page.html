@@ -1,53 +1,81 @@
-<ion-content>
-  <ion-grid justify-content-center padding-vertical class="ion-page">
-    <ion-row justify-content-center>
-      <ion-col text-center>
-        <h1 class="title">REGISTRO</h1>
-      </ion-col>
-    </ion-row>
-    <ion-row justify-content-center>
-      <ion-col size="11" size-sm="9" size-md="6">
-        <ion-item>
-          <ion-label position="floating">Nombre</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row justify-content-center>
-      <ion-col size="11" size-sm="9" size-md="6">
-        <ion-item>
-          <ion-label position="floating">Email</ion-label>
-          <ion-input type="email"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row justify-content-center>
-      <ion-col size="11" size-sm="9" size-md="6">
-        <ion-item>
-          <ion-label position="floating">Contraseña</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row justify-content-center>
-      <ion-col size="11" size-sm="9" size-md="6">
-        <ion-item>
-          <ion-label position="floating">Confirmar contraseña</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
+<ion-header no-border>
+  <ion-toolbar color="transparent">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/welcome" color="purple"></ion-back-button>
+    </ion-buttons>
+    <b>Login</b>
+  </ion-toolbar>
+</ion-header>
 
-    <ion-row justify-content-center>
-      <ion-col size="11" size-sm="9" size-md="6">
-        <ion-button expand="block" size="large" (click)="registrar()">
-          CONTINUAR
-        </ion-button>  
+<ion-content fullscreen>
+  <ion-grid class="ion-page ion-justify-content-center ion-padding-vertical">
+    <ion-row class="ion-justify-content-center">
+      <ion-col class="ion-text-center">
+        <h1 class="title text-purple">REGISTRO</h1>
       </ion-col>
     </ion-row>
-    <ion-row justify-content-center>
+    <ion-row class="ion-justify-content-center">
       <ion-col size="11" size-sm="9" size-md="6">
-        <p text-center class="text-teal font-600 font1">Ingresar con mi cuenta</p>
+
+        <!-- Forumulario de tipo ngForm con el id Formulario -->
+        <form #formulario="ngForm" (ngSubmit)="formOnSubmit()">
+          <ion-list class="ion-no-padding border-radius-15 white-opacity">
+            
+            <ion-item>
+              <ion-label >
+                <ion-icon name="person" color="purple"></ion-icon>
+              </ion-label>
+              <ion-input type="text"
+                        name="nombre"
+                        [(ngModel)]="newUser.nombre"
+                        placeholder="Júan Pérez"
+                        required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label >
+                <ion-icon name="mail" color="purple"></ion-icon>
+              </ion-label>
+              <ion-input type="email"
+                        name="email"
+                        pattern= "^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                        [(ngModel)]="newUser.email"
+                        placeholder="yallegue@mail.com"
+                        required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label >
+                <ion-icon name="key" color="purple"></ion-icon>
+              </ion-label>
+              <ion-input [type]="passwordIsShown ? 'text': 'password'"
+                        name="password"
+                        [(ngModel)]="newUser.password"
+                        minlength="6"
+                        placeholder="(min. 6 caracteres)"
+                        required></ion-input>
+                        <ion-icon [name]="passwordIsShown ? 'eye-off' : 'eye'" slot="end" (click)="showPassword()"></ion-icon>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>
+                <ion-icon name="business" color="purple"></ion-icon>
+              </ion-label>
+              <ion-select interface="action-sheet" cancel-text="CANCELAR"
+                        name="instituto"
+                        [(ngModel)]="newUser.institutoId"
+                        placeholder="Selecciona tu instituto"
+                        required>
+                <ion-select-option *ngFor="let instituto of institutos" [value]="instituto.id">{{ instituto.nombreCorto }}</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+          <!-- El boton no aparece hasta que el formulario sea válido -->
+          <ion-button expand="full" shape="round" type="submit" *ngIf="formulario.valid">
+            REGISTRARME
+          </ion-button>
+        </form>
+      
       </ion-col>
     </ion-row>
   </ion-grid>

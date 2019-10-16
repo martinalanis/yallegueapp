@@ -4,19 +4,28 @@
     
     <ion-menu side="start" menuId="defaultMenu" contentId="principal">
       <ion-header>
-        <ion-toolbar color="primary">
+        <ion-toolbar color="tertiary">
           <ion-title>Ya Llegue</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content>
         <ion-list>
           <ion-menu-toggle autoHide="false" *ngFor="let link of menuLinks">
-            <ion-item [routerLink]="link.redirectTo">
+            <ion-item [routerLink]="link.path">
               <ion-label>{{ link.text }}</ion-label>
             </ion-item>
           </ion-menu-toggle> 
         </ion-list>
       </ion-content>
+      <ion-footer no-border>
+        <ion-toolbar color="transparent" class="ion-no-padding">
+          <ion-menu-toggle>
+            <ion-button expand="block" color="purple" routerLink="/vender" class="ion-no-maring">
+              ¿Quieres vender con nosotros?
+            </ion-button>
+          </ion-menu-toggle>
+        </ion-toolbar>
+      </ion-footer>
     </ion-menu>
   
     <ion-router-outlet id="principal"></ion-router-outlet>

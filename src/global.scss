@@ -25,9 +25,38 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+/* Sass Variables */
+$colors : 'teal', 'purple';
+
 ion-button {
   font-weight: 600;
   height: 40px;
+}
+
+ion-card {
+  $border-radius: 15px;
+  box-shadow: none !important;
+
+  .card-image-container{
+    border-radius: $border-radius;
+    max-height: 200px;
+    overflow: hidden;
+  }
+  
+  ion-card-content {
+    margin-top: -50px;
+    background: var(--white);
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid var(--ion-color-light-shade);
+    border-radius: $border-radius;
+  }
+
+  ion-card-subtitle {
+    margin-top: 5px;
+  }
+
 }
 
 .ion-color-purple {
@@ -43,17 +72,25 @@ ion-button {
   --border-radius: 15px;
 }
 
+.title,
+.font-primary,
+.lovemosnter {
+  letter-spacing: 4px;
+}
+
 .title {
   font-family: var(--font-primary), sans-serif;
   font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: 4px;
+  font-weight: 700;  
 }
 
 .font-primary {
   font-family: var(--font-primary), sans-serif;
-  font-size: 1.8rem;
-  letter-spacing: 4px;
+  font-size: 1.8rem;  
+}
+
+.lovemonster {
+  font-family: 'Love Monster', sans-serif;
 }
 
 .font1 {
@@ -64,26 +101,47 @@ ion-button {
   font-weight: 600;
 }
 
+/** Text Colors **/
+@each $color in $colors {
+  .text-#{$color} {
+    color: var(--#{$color});
+  }
+}
+
+/** Custom Action Sheet **/
 .action-sheet-group {
-  background: var(--ion-color-tertiary) !important;
+  font-family: var(--ion-font-family), sans-serif;
+  button {
+    font-weight: 700 !important;
+    // font-size: 1.5rem !important;
+    letter-spacing: 2px !important;
+    color: lighten(black, 40%);
+  }
 }
 
 .action-sheet-group-cancel {
-  background: var(--ion-color-dark) !important;
-
-  button { 
-    color: var(--white) !important;
+  background: var(--ion-color-tertiary) !important;
+  button {
+    color: var(--ion-color-danger) !important;
   }
 }
 
 .action-sheet-selected {
-  color: var(--light-blue) !important;
-}
-
-.text-teal {
-  color: var(--teal);
+  color: var(--purple) !important;
 }
 
 .border-radius-15 {
   border-radius: 15px;
+}
+
+ion-list.white-opacity {
+  background: rgba(255,255,255,0.7);
+  ion-item {
+      --ion-item-background: transparent;
+  }
+}
+
+.no-margin-lr {
+  margin-left: 0;
+  margin-right: 0;
 }

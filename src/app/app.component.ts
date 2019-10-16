@@ -14,7 +14,7 @@ export class AppComponent {
   private menuLinks = [
     {
       text: 'Cambiar instituto',
-      redirectTo: '/welcome'
+      path: '/welcome'
     }
   ];
 

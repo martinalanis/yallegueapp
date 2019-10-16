@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InstitutoInterface } from '../../models/instituto.interface';
+import { InstitutoService } from '../../services/instituto.service';
 
 @Component({
   selector: 'app-registro',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroPage implements OnInit {
 
-  constructor() { }
+  institutos: InstitutoInterface[];
+
+  newUser = {
+    nombre: '',
+    email: '',
+    password: '',
+    institutoId: ''
+  }
+
+  passwordIsShown = false;
+
+  constructor(private institutoService: InstitutoService) { }
 
   ngOnInit() {
+    this.institutoService.getInstitutos().subscribe(res => this.institutos = res);
+  }
+
+  formOnSubmit(){
+    console.log(this.newUser);
+  }
+
+  showPassword() {
+    this.passwordIsShown = !this.passwordIsShown;
   }
 
 }

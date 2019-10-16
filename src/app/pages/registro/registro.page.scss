@@ -1,7 +1,22 @@
-ion-content {
+.ion-page {
   --background: none;
-  background-image: url('../../../assets/background.png');
+  background-image: var(--background-image);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+// ion-toolbar {
+//   --background: transparent;
+//   --ion-color-base: transparent !important;
+// }
+
+ion-item.item-select {
+    ion-label {
+      flex: initial;
+    }
+    ion-select {
+      max-width: 100%;
+      flex: 1;
+    }
 }
