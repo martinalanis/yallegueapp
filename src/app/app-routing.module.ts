@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'registro', loadChildren: './pages/registro/registro.module#RegistroPageModule' },
   { path: 'vender', loadChildren: './pages/vender/vender.module#VenderPageModule' },
   { path: 'categorias', loadChildren: './pages/categorias/categorias.module#CategoriasPageModule' },
+  { path: 'productos', loadChildren: './pages/productos/productos.module#ProductosPageModule' },
 ];
 
 @NgModule({

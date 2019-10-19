@@ -66,7 +66,6 @@ ion-card {
     }
   }
 
-
 }
 
 .ion-color-purple {
@@ -108,7 +107,7 @@ ion-card {
 }
 
 .font-600 {
-  font-weight: 600;
+  font-weight: 600 !important;
 }
 
 /** Text Colors **/
@@ -116,6 +115,16 @@ ion-card {
   .text-#{$color} {
     color: var(--#{$color});
   }
+}
+
+.responsive-img {
+  width: 100%;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /** Custom Action Sheet **/
