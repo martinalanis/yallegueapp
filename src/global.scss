@@ -81,6 +81,17 @@ ion-card {
   --border-radius: 15px;
 }
 
+.btn-close-modal {
+  --padding-bottom: 0 !important;
+  --padding-top: 0 !important;
+  --padding-start: 0 !important;
+  --padding-end: 0 !important;
+  --background: var(--white) !important;
+  font-size: 0.8rem !important;
+  width: 35px !important;
+  height: 35px !important;
+}
+
 .title,
 .font-primary,
 .lovemosnter {
@@ -99,7 +110,9 @@ ion-card {
 }
 
 .lovemonster {
-  font-family: 'Love Monster', sans-serif;
+  font-family: 'Love Monster', sans-serif !important;
+  letter-spacing: 3px !important;
+  font-size: 1.9rem !important;
 }
 
 .font1 {
@@ -163,4 +176,9 @@ ion-list.white-opacity {
 .no-margin-lr {
   margin-left: 0;
   margin-right: 0;
+}
+
+.my-10 {
+  margin-top: 10px;;
+  margin-bottom: 10px;;
 }
