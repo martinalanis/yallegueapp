@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-producto-detalles',
@@ -14,7 +14,7 @@ export class ProductoDetallesPage implements OnInit {
 
   productQty = 1;
 
-  constructor( private modalCtrl: ModalController ) { }
+  constructor( private modalCtrl: ModalController, private toastCtrl: ToastController ) { }
 
   ngOnInit() {
   }
@@ -34,15 +34,27 @@ export class ProductoDetallesPage implements OnInit {
   subQty() {
     if (this.productQty > 1) {
       this.productQty -= 1;
+    } else {
+      this.showToastMinProducts();
     }
   }
 
   checkQty() {
-    console.log('check', this.productQty);
     if (this.productQty < 1) {
+      this.showToastMinProducts();
       this.productQty = 1;
       console.log('EL mininmo del producto debe ser 1');
     }
+  }
+
+  async showToastMinProducts() {
+    const toast = await this.toastCtrl.create({
+      message: 'El mininmo de productos es 1',
+      duration: 3500,
+      showCloseButton: true,
+      closeButtonText: 'cerrar'
+    });
+    toast.present();
   }
 
 }

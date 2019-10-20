@@ -1,0 +1,32 @@
+// ion-content{
+//   --ion-background-color: #fafaff;
+// }
+ion-card {
+  --background: var(--white);
+}
+
+table {
+  width: 100%;
+}
+
+.item-has-focus .label-floating {
+  color: var(--purple);
+}
+
+.btn-vaciar-carrito {
+  border-radius: 15px;
+  overflow: hidden;
+  background: var(--purple);
+}
+
+.td-qty {
+  width: 130px;
+}
+
+.product-title small {
+  color: var(--ion-color-medium);
+}
+
+.checkout-products ion-icon {
+  font-size: inherit;
+}

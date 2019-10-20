@@ -14,6 +14,7 @@ export class RegistroPage implements OnInit {
   newUser = {
     nombre: '',
     email: '',
+    telefono: '',
     password: '',
     institutoId: ''
   }

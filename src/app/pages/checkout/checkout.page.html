@@ -1,0 +1,123 @@
+<ion-header translucent>
+  <ion-toolbar color="tertiary">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" ></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>
+      Resumen de tu orden
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item-divider class="ion-padding-vertical bg-teal">
+    <ion-title color="light" class="lovemonster">Enviar a</ion-title>
+  </ion-item-divider>
+
+  <ion-list class="ion-padding-horizontal ion-no-padding">
+    <!-- <ion-list-header>
+      <ion-title>Enviar a:</ion-title>
+    </ion-list-header> -->
+
+    <ion-item lines="none">
+      <ion-label *ngIf="!envio.checked" color="medium">Yo paso por el pedido</ion-label>
+      <ion-label *ngIf="envio.checked">Yo paso por el pedido</ion-label>
+      <ion-toggle [(ngModel)]="envio.checked"></ion-toggle>
+    </ion-item>
+    
+    <ion-item lines="none">
+      <ion-icon name="person" slot="start" color="purple"></ion-icon>
+      <ion-label>{{ user.nombre }}</ion-label>
+    </ion-item>
+
+    <ion-item *ngIf="!envio.checked">
+      <ion-icon name="pin" slot="start" color="purple"></ion-icon>
+      <ion-input type="text"
+                name="salon"
+                placeholder="Salón"
+                [(ngModel)]="envio.salon"
+                required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">
+        Comentarios adicionales a tu orden:
+      </ion-label>
+      <ion-textarea [(ngModel)]="envio.comentarios" rows="2" autoGrow="true"></ion-textarea>
+    </ion-item>          
+
+  </ion-list>
+
+  <ion-item-divider class="ion-padding bg-teal">
+    <ion-title color="light" class="lovemonster">Tu pedido:</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="vaciarCarrito()" color="light" class="btn-vaciar-carrito">
+        vaciar carrito
+      </ion-button>
+    </ion-buttons>
+  </ion-item-divider>
+
+  <ion-list class="ion-padding-vertical checkout-products">
+    <ion-item>
+      <ion-label class="product-title">
+        Panini Vegetariano <br>
+        <small><i>*Cebolla</i></small>
+        <small><i>*Aceituna</i></small> <br>
+        {{ '48.50' | currency : 'MXN' }}
+      </ion-label>
+      <ion-buttons slot="end">
+        <div class="qty-buttons">
+          <button class="ion-activatable" (click)="subQty()">
+            <ion-icon slot="icon-only" name="remove"></ion-icon>
+            <ion-ripple-effect></ion-ripple-effect>
+          </button>
+          <input type="number" (change)="updateQty()" value="2">
+          <button class="ion-activatable" (click)="addQty()">
+            <ion-icon slot="icon-only" name="add"></ion-icon>
+            <ion-ripple-effect></ion-ripple-effect>
+          </button>
+        </div>
+      </ion-buttons>
+    </ion-item>
+    <table>
+      <tr>
+        <td>
+          
+          <!-- <h5 class="ion-no-margin product-title">
+            
+          </h5> -->
+          
+        </td>
+        <!-- <td class="td-qty">
+          <div class="qty-buttons">
+            <button class="ion-activatable" (click)="subQty()">
+              <ion-icon slot="icon-only" name="remove"></ion-icon>
+              <ion-ripple-effect></ion-ripple-effect>
+            </button>
+            <input type="number" (change)="updateQty()">
+            <button class="ion-activatable" (click)="addQty()">
+              <ion-icon slot="icon-only" name="add"></ion-icon>
+              <ion-ripple-effect></ion-ripple-effect>
+            </button>
+          </div>
+        </td> -->
+      </tr>
+    </table>
+  </ion-list>
+  
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar (click)="checkout()" color="purple">
+    <ion-title class="lovemonster">ORDENAR</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button class="btn-overlay--dark">
+        TOTAL : {{ '220.50' | currency: 'MXN' }}
+      </ion-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-footer>

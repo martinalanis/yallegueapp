@@ -28,7 +28,7 @@
               <ion-input type="text"
                         name="nombre"
                         [(ngModel)]="newUser.nombre"
-                        placeholder="Júan Pérez"
+                        placeholder="ej: Júan Pérez"
                         required></ion-input>
             </ion-item>
 
@@ -40,7 +40,19 @@
                         name="email"
                         pattern= "^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
                         [(ngModel)]="newUser.email"
-                        placeholder="yallegue@mail.com"
+                        placeholder="ej: yallegue@mail.com"
+                        required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label >
+                <ion-icon name="call" color="purple"></ion-icon>
+              </ion-label>
+              <ion-input type="tel"
+                        name="telefono"
+                        pattern= "^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                        [(ngModel)]="newUser.telefono"
+                        placeholder="ej: 4432555555"
                         required></ion-input>
             </ion-item>
 
