@@ -13,8 +13,8 @@ export class AppComponent {
 
   private menuLinks = [
     {
-      text: 'Cambiar instituto',
-      path: '/welcome'
+      text: 'Perfil',
+      path: '/perfil'
     }
   ];
 

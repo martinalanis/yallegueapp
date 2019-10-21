@@ -1,0 +1,21 @@
+ion-content{
+  --ion-background-color: var(--ion-color-dark-tint);
+}
+
+hr {
+  background: var(--ion-color-medium);
+}
+
+.img-profile {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border: 3px solid var(--ion-color-medium);
+  box-shadow: 8px 8px 15px rgba(0,0,0,0.7);  
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+  }
+}

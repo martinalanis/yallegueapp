@@ -156,8 +156,7 @@ ion-card {
 }
 
 .title,
-.font-primary,
-.lovemosnter {
+.font-primary {
   letter-spacing: 4px;
 }
 
@@ -175,7 +174,8 @@ ion-card {
 .lovemonster {
   font-family: 'Love Monster', sans-serif !important;
   letter-spacing: 3px !important;
-  font-size: 1.9rem !important;
+  font-size: 1.7rem !important;
+  line-height: 0.9;
 }
 
 .font1 {

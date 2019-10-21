@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'categorias', loadChildren: './pages/categorias/categorias.module#CategoriasPageModule' },
   { path: 'productos', loadChildren: './pages/productos/productos.module#ProductosPageModule' },
   { path: 'checkout', loadChildren: './pages/checkout/checkout.module#CheckoutPageModule' },
+  { path: 'perfil', loadChildren: './pages/perfil/perfil.module#PerfilPageModule' },
 ];
 
 @NgModule({

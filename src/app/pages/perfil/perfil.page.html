@@ -1,0 +1,81 @@
+<ion-header no-border>
+  <ion-toolbar color="transparent">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" color="light"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-page ion-padding">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12">
+        <ion-text color="tertiary">
+            <h2 class="lovemonster ion-text-center">DATOS DE PERFIL</h2>
+          </ion-text>
+      </ion-col>
+      <ion-col size="6">
+        <ion-img src="../../../assets/placeholders/user.png" class="img-profile"></ion-img>
+      </ion-col>
+      <ion-col size="10">        
+        <h5 class="ion-text-center">
+          <ion-text color="tertiary">
+            Nombre
+          </ion-text>
+        </h5>
+        <p class="ion-text-center my-10">
+          <ion-text color="light">
+            Juan Pérez
+          </ion-text>
+        </p>
+        <hr/>
+      </ion-col>
+      <ion-col size="10">        
+        <h5 class="ion-text-center">
+          <ion-text color="tertiary">
+            Email
+          </ion-text>
+        </h5>
+        <p class="ion-text-center my-10">
+          <ion-text color="light">
+            juan@yallegue.app
+          </ion-text>
+        </p>
+        <hr/>
+      </ion-col>
+      <ion-col size="10">        
+        <h5 class="ion-text-center">
+          <ion-text color="tertiary">
+            Teléfono
+          </ion-text>
+        </h5>
+        <p class="ion-text-center my-10">
+          <ion-text color="light">
+            (443) 255 5555
+          </ion-text>
+        </p>
+        <hr/>
+      </ion-col>
+
+      <ion-col size="10">        
+        <h5 class="ion-text-center">
+          <ion-text color="tertiary">
+            Instituto
+          </ion-text>
+        </h5>
+        <p class="ion-text-center my-10">
+          <ion-text color="light">
+            Instituto Tecnológico de Morelia
+          </ion-text>
+        </p>
+        <hr/>
+      </ion-col>
+      <ion-col size="10">
+        <ion-button expand="block" shape="round" color="primary" (click)="editarPerfil()">
+          EDITAR
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
